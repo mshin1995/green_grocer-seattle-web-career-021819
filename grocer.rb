@@ -1,11 +1,20 @@
 def consolidate_cart(cart)
-  # code here
+  new_hash = {}
+  cart.each do |element|
+    element.each do |item, data|
+      if new_hash[item]
+        new_hash[item][:count] += 1
+      else 
+        new_hash[item] = data
+        new_hash[item][:count] = 1
+      end
+    end
+  end
+  new_hash
 end
 
 def apply_coupons(cart, coupons)
-  # code here
-end
-
+  
 def apply_clearance(cart)
   # code here
 end
